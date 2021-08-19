@@ -1,0 +1,21 @@
+{
+    "plugins": [
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-transform-flow-strip-types",
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-proposal-export-namespace-from"
+    ],
+    "presets": [
+      [
+        "babel-preset-gatsby",
+        {
+          "targets": {
+            "browsers": [">0.25%", "not dead"]
+          }
+        }
+      ],
+      [
+        "@babel/preset-flow"
+      ]
+    ]
+  }
