@@ -22,7 +22,7 @@ const Home = () => {
         <HeroWrapper>
           <HeroSummary>
             <p>Your Gateway to State of the Art DeFi Services and Asset Management.</p>
-            <div className="button">Open Vault</div>
+            <div className="button">Open Bank</div>
           </HeroSummary>
           {/* <MainBackgroundImage></MainBackgroundImage> */}
         </HeroWrapper>

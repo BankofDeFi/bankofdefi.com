@@ -1,22 +1,86 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
 import Logo from 'src/assets/images/bank-of-defi-logo.jpeg'
 
-const blogLink = 'https://blog.bankofdefi.com'
+import detectEthereumProvider from '@metamask/detect-provider'
+
+
+const blogURL = 'https://blog.bankofdefi.com'
+
 
 const Header = () => {
-    return (<HeaderElement>
-                <LogoWrapper>
-                <ImageWrapper><img src={Logo} alt="logo" /></ImageWrapper>
-                <div className="title">Bank of DeFi</div>
-                </LogoWrapper>
+  const [ chainId, setChainId ] = useState("")
+  const [ userAccount, setUserAccount ] =  useState(null)
+  const [ userAccounts, setUserAccounts ] = useState([])
+  const [ isDataPending, setIsDataPending ] = useState(false)
 
-                <HeaderNav>
-                    <div><a href={blogLink}>Blog</a></div>
-                    <ButtonWrapper>Login</ButtonWrapper>
-                </HeaderNav>
-            </HeaderElement>)
+  const [ ethProvider, setEthProvider ] = useState(null)
+
+  useEffect(async () => {
+    // Check if ethProvider exist, disable connect buttons if so, and redirect to app
+    await detectEthereumProvider()
+    .then((provider) => {
+      setEthProvider(provider)
+      if (provider.isConnected()) {
+        setIsDataPending(true)
+      }
+    })
+  }, [])
+
+  
+  const handleConnect = async (event)  => {
+    event.preventDefault()
+
+    if (!ethProvider.isConnected) {
+      console.log("Ethereum detected")
+
+      await ethProvider.request({ method: "eth_chainId" })
+      .then(payload => {
+        setChainId(payload)
+      })
+      .catch(error => {
+        console.log(error, 'Issues with ChainID')
+      })
+
+      await ethProvider.request({ method: "eth_requestAccounts" })
+      .then(payload => {
+        setUserAccounts(payload)
+      })
+      .then(() => {
+        setUserAccount(userAccounts[0])
+      })
+      .catch(error => {
+        console.log(error.code, 'codeError')
+        if (error.code === -32002) {
+          console.log( 'its a pending error')
+        }
+      })
+
+      console.log(chainId, 'chainId')
+      console.log(userAccount, "userAccount")
+      console.log(userAccounts, "userAccounts")
+    } else {
+      console.log(" Please install MetaMask!")
+    }
+  }
+
+  return (<HeaderElement>
+              <LogoWrapper>
+              <ImageWrapper><img src={Logo} alt="logo" /></ImageWrapper>
+              <div className="title">Bank of DeFi</div>
+              </LogoWrapper>
+
+              <HeaderNav>
+                  <div><a href={blogURL}>Blog</a></div>
+                  <ButtonWrapper 
+                    onClick={handleConnect}
+                    isDisabled={isDataPending}
+                  >
+                    {"Connect"}
+                  </ButtonWrapper>
+              </HeaderNav>
+          </HeaderElement>)
 }
 
 
@@ -83,8 +147,8 @@ const ButtonWrapper = styled.div`
   width: 120px;
   height: 40px;
   border-radius: 4px;
-  background: gold;
-  cursor: pointer;
+  background: ${({ isDisabled }) => (isDisabled ? "#cccccc" : "gold")};
+  cursor: ${({ isDisabled }) => (isDisabled ? "default" : "pointer")};
   display: flex;
   justify-content: center;
   align-items: center;
