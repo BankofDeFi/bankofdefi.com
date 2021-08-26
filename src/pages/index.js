@@ -32,7 +32,7 @@ const Home = () => {
       setEthProvider(provider)
 
       if (provider.isConnected()) {
-        // window.location = "https://pro.bankofdefi.com"
+        // window.location = "https://app.bankofdefi.com"
       }
     })
   }, [])

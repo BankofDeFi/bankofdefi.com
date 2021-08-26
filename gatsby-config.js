@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
-    title: "home.bankofdefi.com",
+    siteUrl: "https://www.bankofdefi.com",
+    title: "Bank of DeFi | Worlds Most Secure DeFi App",
   },
   plugins: [
     "gatsby-plugin-styled-components",
