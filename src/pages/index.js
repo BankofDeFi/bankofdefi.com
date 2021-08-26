@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
+import  { navigate } from 'gatsby'
+
 import styled from 'styled-components'
+import detectEthereumProvider from '@metamask/detect-provider'
 
 import Header from 'src/components/Header'
 import BTCBackground from 'src/assets/images/bitcoin.jpg'
@@ -10,19 +13,86 @@ import 'src/styles/fonts.scss';
 
 
 const Home = () => {
+  const [ chainId, setChainId ] = useState("")
+  const [ userAccount, setUserAccount ] =  useState(null)
+  const [ userAccounts, setUserAccounts ] = useState([])
+  const [ isDataPending, setIsDataPending ] = useState(false)
+
+  const [ ethProvider, setEthProvider ] = useState(null)
+
+  const connectCTAText = isDataPending ? "Connect" : "Open Bank"
+
+
+  useEffect(async () => {
+    setIsDataPending(true)
+
+    await detectEthereumProvider()
+    .then((provider) => {
+      setIsDataPending(false)
+      setEthProvider(provider)
+
+      if (provider.isConnected()) {
+        // window.location = "https://pro.bankofdefi.com"
+      }
+    })
+  }, [])
+
+
+  const handleConnect = async (event)  => {
+    event.preventDefault()
+
+    if (!ethProvider.isConnected) {
+      console.log("Ethereum detected")
+
+      await ethProvider.request({ method: "eth_chainId" })
+      .then(payload => {
+        setChainId(payload)
+      })
+      .catch(error => {
+        console.log(error, 'Issues with ChainID')
+      })
+
+      await ethProvider.request({ method: "eth_requestAccounts" })
+      .then(payload => {
+        setUserAccounts(payload)
+      })
+      .then(() => {
+        setUserAccount(userAccounts[0])
+      })
+      .catch(error => {
+        console.log(error.code, 'codeError')
+        if (error.code === -32002) {
+          console.log( 'its a pending error')
+        }
+      })
+
+      console.log(chainId, 'chainId')
+      console.log(userAccount, "userAccount")
+      console.log(userAccounts, "userAccounts")
+    } else {
+      console.log("You're already connected to Meta Mask")
+    }
+  }
+
+
+
   return (
     <PageWrapper>
       <Helmet>
         <title>Bank of DeFi</title>
         <link rel="icon" href="/favicon.ico" />
       </Helmet>
-      <Header />
+      <Header 
+        handleConnect={handleConnect}
+        isDataPending={isDataPending}
+        connectCTAText={connectCTAText}
+      />
 
       <MainWrapper>
         <HeroWrapper>
           <HeroSummary>
             <p>Your Gateway to State of the Art DeFi Services and Asset Management.</p>
-            <div className="button">Open Bank</div>
+            <div className="button" onClick={handleConnect}>{connectCTAText}</div>
           </HeroSummary>
           {/* <MainBackgroundImage></MainBackgroundImage> */}
         </HeroWrapper>

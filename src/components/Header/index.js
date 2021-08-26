@@ -3,68 +3,11 @@ import styled from 'styled-components'
 
 import Logo from 'src/assets/images/bank-of-defi-logo.jpeg'
 
-import detectEthereumProvider from '@metamask/detect-provider'
-
-
 const blogURL = 'https://blog.bankofdefi.com'
 
 
-const Header = () => {
-  const [ chainId, setChainId ] = useState("")
-  const [ userAccount, setUserAccount ] =  useState(null)
-  const [ userAccounts, setUserAccounts ] = useState([])
-  const [ isDataPending, setIsDataPending ] = useState(false)
 
-  const [ ethProvider, setEthProvider ] = useState(null)
-
-  useEffect(async () => {
-    // Check if ethProvider exist, disable connect buttons if so, and redirect to app
-    await detectEthereumProvider()
-    .then((provider) => {
-      setEthProvider(provider)
-      if (provider.isConnected()) {
-        setIsDataPending(true)
-      }
-    })
-  }, [])
-
-  
-  const handleConnect = async (event)  => {
-    event.preventDefault()
-
-    if (!ethProvider.isConnected) {
-      console.log("Ethereum detected")
-
-      await ethProvider.request({ method: "eth_chainId" })
-      .then(payload => {
-        setChainId(payload)
-      })
-      .catch(error => {
-        console.log(error, 'Issues with ChainID')
-      })
-
-      await ethProvider.request({ method: "eth_requestAccounts" })
-      .then(payload => {
-        setUserAccounts(payload)
-      })
-      .then(() => {
-        setUserAccount(userAccounts[0])
-      })
-      .catch(error => {
-        console.log(error.code, 'codeError')
-        if (error.code === -32002) {
-          console.log( 'its a pending error')
-        }
-      })
-
-      console.log(chainId, 'chainId')
-      console.log(userAccount, "userAccount")
-      console.log(userAccounts, "userAccounts")
-    } else {
-      console.log(" Please install MetaMask!")
-    }
-  }
-
+const Header = ({ handleConnect, isDataPending, connectCTAText }) => {  
   return (<HeaderElement>
               <LogoWrapper>
               <ImageWrapper><img src={Logo} alt="logo" /></ImageWrapper>
@@ -77,7 +20,7 @@ const Header = () => {
                     onClick={handleConnect}
                     isDisabled={isDataPending}
                   >
-                    {"Connect"}
+                    {connectCTAText}
                   </ButtonWrapper>
               </HeaderNav>
           </HeaderElement>)
