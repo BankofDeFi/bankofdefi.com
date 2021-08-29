@@ -3,11 +3,9 @@ import styled from 'styled-components'
 
 import Logo from 'src/assets/images/bank-of-defi-logo.jpeg'
 
-const blogURL = 'https://blog.bankofdefi.com'
 
 
-
-const Header = ({ handleConnect, isDataPending, connectCTAText }) => {  
+const Header =  ({ appURL, blogURL }) => {  
   return (<HeaderElement>
               <LogoWrapper>
               <ImageWrapper><img src={Logo} alt="logo" /></ImageWrapper>
@@ -16,12 +14,7 @@ const Header = ({ handleConnect, isDataPending, connectCTAText }) => {
 
               <HeaderNav>
                   <div><a href={blogURL}>Blog</a></div>
-                  <ButtonWrapper 
-                    onClick={handleConnect}
-                    isDisabled={isDataPending}
-                  >
-                    {connectCTAText}
-                  </ButtonWrapper>
+                  <ButtonWrapper><a href={appURL}>Open Bank</a></ButtonWrapper>
               </HeaderNav>
           </HeaderElement>)
 }
