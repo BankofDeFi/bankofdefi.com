@@ -48,7 +48,7 @@ const LogoWrapper = styled.div`
 
   .title {
     margin: 0;
-    font-size: 32px;
+    font-size: 30px;
     line-height: 1.15;
     font-family: 'Rokkitt', serif;
     font-weight: 600;
@@ -69,7 +69,7 @@ const LogoWrapper = styled.div`
   }
   img {
     width: 100%;
-    max-width: 120px;
+    max-width: 105px;
     margin-right: 5px;
   }
 `
