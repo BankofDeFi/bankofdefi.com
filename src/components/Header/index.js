@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 
-import Logo from 'src/assets/images/bank-of-defi-logo.jpeg'
+import Logo from 'src/assets/images/banklogo.png'
 
 
 
 const Header =  ({ appURL, blogURL }) => {  
   return (<HeaderElement>
               <LogoWrapper>
-              <ImageWrapper><img src={Logo} alt="logo" /></ImageWrapper>
-              <div className="title">Bank of DeFi</div>
+                <ImageWrapper><img src={Logo} alt="logo" /></ImageWrapper>
+                <div className="title">Bank of DeFi</div>
               </LogoWrapper>
 
               <HeaderNav>
@@ -27,23 +27,35 @@ export default Header
 
 const HeaderElement = styled.header`
   width: 100%;
+  margin-bottom: 30px;
+  max-height: 75px;
   display: flex;
-  padding: 10px 20px;
+  color: #fff;
+  padding: 24px 20px;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 2px solid silver;
+  background-image: linear-gradient(315deg, #a55c1b 0%, #000000 60%);
 `
 
 const LogoWrapper = styled.div`
   display: flex;
+  position: relative;
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
+  margin-left: 20px;
+  margin-top: 30px;
+  width: 100%;
+
   .title {
     margin: 0;
-    font-size: 26px;
+    font-size: 32px;
     line-height: 1.15;
     font-family: 'Rokkitt', serif;
     font-weight: 600;
+    width: 100%;
+    margin-left: -30px;
+    margin-top: 20px;
+    // position: absolute;
     .description {
       text-align: center;
     }
@@ -57,9 +69,8 @@ const LogoWrapper = styled.div`
   }
   img {
     width: 100%;
-    max-width: 20px;
+    max-width: 120px;
     margin-right: 5px;
-    border-radius: 100%;
   }
 `
 
@@ -81,10 +92,12 @@ const HeaderNav = styled.nav`
 const ButtonWrapper = styled.div`
   font-size: 14px;
   width: 120px;
+  color: #fff;
   height: 40px;
   border-radius: 4px;
   background: ${({ isDisabled }) => (isDisabled ? "#cccccc" : "gold")};
   cursor: ${({ isDisabled }) => (isDisabled ? "default" : "pointer")};
+  background-image: linear-gradient(to right bottom, #e8962e, #e45131) !important;
   display: flex;
   justify-content: center;
   align-items: center;

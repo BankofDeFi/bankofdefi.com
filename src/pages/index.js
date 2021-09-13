@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
 import Header from 'src/components/Header'
-import BTCBackground from 'src/assets/images/bitcoin.jpg'
+import BTCBackground from 'src/assets/images/banklogo.png'
 
 import 'src/styles/globals.scss';
 import 'src/styles/fonts.scss';
@@ -19,7 +19,7 @@ const Home = () => {
         <title>Bank of DeFi</title>
         <link rel="icon" href="/favicon.ico" />
       </Helmet>
-      <Header 
+      <Header
         blogURL={blogURL}
         appURL={appURL}
       />
@@ -69,7 +69,8 @@ const ButtonWrapper = styled.div`
   width: 120px;
   height: 40px;
   border-radius: 4px;
-  background: gold;
+  background-image: linear-gradient(to right bottom, #e8962e, #e45131)
+  box-shadow: 0 1px 28px rgb(255 152 0 / 66%);
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -95,11 +96,25 @@ const HeroWrapper = styled.div`
   flex: 1;
   padding: 0 50px;
   background: #000;
-  background: #000 no-repeat fixed right;
-  background-image: url(${BTCBackground});
-  background-size: 600px;
-  background-position: 80% 50%;
+  position: relative;
+
+  // ::before {
+  //   content: "";
+  //   background-image:  url(${BTCBackground});
+  //   transform: scaleX(-1);
+  //   background-repeat: no-repeat;
+  //   opacity: 0.7;
+  //   // background-size: 600px;
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   background-position: 10% 50%;
+  // }
 `
+
+
 
 const HeroSummary = styled.div`
   display: flex;
@@ -115,11 +130,12 @@ const HeroSummary = styled.div`
   .button {
     font-size: 16px;
     width: 140px;
-    color: #000;
+    color: #fff;
     height: 40px;
     padding: 8px;
     border-radius: 4px;
-    background: gold;
+    box-shadow: 0 1px 28px rgb(255 152 0 / 66%);
+    background-image: linear-gradient(to right bottom, #e8962e, #e45131) !important;
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -142,11 +158,13 @@ const HeroSummary = styled.div`
 
 const FooterElement = styled.footer`
   width: 100%;
-  height: 100px;
-  border-top: 1px solid #eaeaea;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
+  background-image: linear-gradient(
+    315deg,#000000 0%, #a55c1b 70%);
 
   img {
     margin-left: 0.5rem;
