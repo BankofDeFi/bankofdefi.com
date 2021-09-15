@@ -90,6 +90,10 @@ const HeroWrapper = styled.div`
   background: #000;
   position: relative;
 
+  @media(max-width: 600px) {
+    padding: 0 25px;
+  }
+
   // ::before {
   //   content: "";
   //   background-image:  url(${BTCBackground});
@@ -117,6 +121,22 @@ const HeroSummary = styled.div`
   line-height: 1.4;
   justify-content: center;
   font-family: 'Spartan', sans-serif;
+
+  @media(max-width: 600px) {
+    font-size: 22px;
+  }
+
+  @media(max-width: 500px) {
+    font-size: 18px;
+  }
+
+  @media(max-width: 400px) {
+    font-size: 16px;
+  }
+
+  @media(max-width: 320px) {
+    font-size: 12px;
+  }
 
 
   .button {

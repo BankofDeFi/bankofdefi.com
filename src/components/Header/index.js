@@ -35,6 +35,11 @@ const HeaderElement = styled.header`
   align-items: center;
   justify-content: space-between;
   background-image: linear-gradient(315deg, #a55c1b 0%, #000000 60%);
+
+  @media(max-width: 600px) {
+    background-image: linear-gradient(
+      315deg,#a55c1b -20%,#000000 45%);
+  }
 `
 
 const LogoWrapper = styled.div`
@@ -72,6 +77,20 @@ const LogoWrapper = styled.div`
     max-width: 100px;
     // margin-right: 5px;
   }
+
+
+  @media(max-width: 600px) {
+    margin-top: 0;
+
+    .title {
+      margin-left: -20px;
+      font-size: 23px;
+    }
+
+    img { 
+      max-width: 80px;
+    }
+  }
 `
 
 const ImageWrapper = styled.div`
@@ -85,6 +104,11 @@ const HeaderNav = styled.nav`
   align-items: center;
   div:first-child {
     margin-right: 25px;
+  }
+
+  // Temp removal of header nav on mobile, should add hamburger menu to replace. 
+  @media(max-width: 500px) {
+    display: none; 
   }
 `
 
