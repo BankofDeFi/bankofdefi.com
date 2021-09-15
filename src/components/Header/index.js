@@ -42,7 +42,7 @@ const LogoWrapper = styled.div`
   position: relative;
   align-items: center;
   // justify-content: center;
-  margin-left: 20px;
+  // margin-left: 20px;
   margin-top: 30px;
   width: 100%;
 
@@ -70,7 +70,7 @@ const LogoWrapper = styled.div`
   img {
     width: 100%;
     max-width: 100px;
-    margin-right: 5px;
+    // margin-right: 5px;
   }
 `
 
