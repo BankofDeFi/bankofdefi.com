@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
 import Header from 'src/components/Header'
+import Footer from 'src/components/Footer'
 import BTCBackground from 'src/assets/images/banklogo.png'
 
 import 'src/styles/globals.scss';
@@ -33,16 +34,7 @@ const Home = () => {
         </HeroWrapper>
       </MainWrapper>
 
-      <FooterElement>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          &copy;{' '}
-           Bank of DeFi
-        </a>
-      </FooterElement>
+      <Footer />
     </PageWrapper>
   )
 }
@@ -141,38 +133,5 @@ const HeroSummary = styled.div`
     justify-content: center;
     align-items: center;
     font-weight: 600;
-  }
-`
-
-
-
-// const MainBackgroundImage = styled.div`
-//   width: 100%;
-//   height: 500px;
-//   background: #000 no-repeat fixed right;
-//   background-image: url(${BTCBackground});
-//   background-size: 600px;
-//   background-position: 80% 50%;
-//   border-radius: 100%;
-// `
-
-const FooterElement = styled.footer`
-  width: 100%;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #fff;
-  background-image: linear-gradient(
-    315deg,#000000 0%, #a55c1b 70%);
-
-  img {
-    margin-left: 0.5rem;
-  }
-
- a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 `
