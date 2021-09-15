@@ -69,7 +69,7 @@ const LogoWrapper = styled.div`
   }
   img {
     width: 100%;
-    max-width: 105px;
+    max-width: 100px;
     margin-right: 5px;
   }
 `
