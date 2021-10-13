@@ -46,21 +46,17 @@ const LogoWrapper = styled.div`
   display: flex;
   position: relative;
   align-items: center;
-  // justify-content: center;
-  // margin-left: 20px;
   margin-top: 30px;
   width: 100%;
 
   .title {
-    margin: 0;
+    margin: 20px 0px 0px -20px;
     font-size: 30px;
     line-height: 1.15;
     font-family: 'Rokkitt', serif;
     font-weight: 600;
     width: 100%;
-    margin-left: -30px;
-    margin-top: 20px;
-    // position: absolute;
+
     .description {
       text-align: center;
     }
@@ -74,8 +70,7 @@ const LogoWrapper = styled.div`
   }
   img {
     width: 100%;
-    max-width: 100px;
-    // margin-right: 5px;
+    max-width: 75px;
   }
 
 
