@@ -16,14 +16,14 @@ export default Post
 
 
 const PostWrapper = styled.section`
-    padding: 2% 5%;
+    // padding: 2% 5%;
     max-width: 800px;
     margin: 0 auto;
 
     p {
         color: rgba(255, 255, 255, 0.8);
         font-size: 16px;
-        font-family: Qanelas-Medium;
+        font-family: 'Spartan',sans-serif;
         font-weight: 500;
         letter-spacing: 0.5px;
         line-height: 24px;
@@ -48,7 +48,7 @@ const PostWrapper = styled.section`
 
     h2 {
         color: rgb(255, 255, 255);
-        font-family: Qanelas-Bold;
+        font-family: 'Spartan',sans-serif;
         font-weight: bold;
         letter-spacing: 0px;
         font-size: 26px;
@@ -64,7 +64,7 @@ const PostWrapper = styled.section`
 
 const PostHeader = styled.h2`
     color: rgb(255, 255, 255);
-    font-family: Qanelas-Bold;
+    font-family: 'Spartan',sans-serif;
     font-size: 42px;
     font-weight: bold;
     letter-spacing: 0px;

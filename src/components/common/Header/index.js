@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 import Logo from 'src/assets/images/banklogo.png'
 
@@ -7,13 +8,17 @@ import Logo from 'src/assets/images/banklogo.png'
 
 const Header =  ({ appURL, blogURL }) => {  
   return (<HeaderElement>
+            <Link to={`/`}>
               <LogoWrapper>
                 <ImageWrapper><img src={Logo} alt="logo" /></ImageWrapper>
                 <div className="title">Bank of DeFi</div>
               </LogoWrapper>
+            </Link>
+              
 
               <HeaderNav>
-                  <div><a href={blogURL}>Blog</a></div>
+                  <div><a href="https://blog.bankofdefi.com">Blog</a></div>
+                  <div><Link to={`/news`}>News</Link></div>
                   <ButtonWrapper><a href={appURL}>Open Bank</a></ButtonWrapper>
               </HeaderNav>
           </HeaderElement>)
@@ -48,6 +53,7 @@ const LogoWrapper = styled.div`
   align-items: center;
   margin-top: 30px;
   width: 100%;
+  cursor: pointer;
 
   .title {
     margin: 20px 0px 0px -20px;
@@ -97,7 +103,8 @@ const HeaderNav = styled.nav`
   display: flex;
   font-size: 18px;
   align-items: center;
-  div:first-child {
+  div {
+    margin-left: 25px;
     margin-right: 25px;
   }
 

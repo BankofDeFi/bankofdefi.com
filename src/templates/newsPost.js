@@ -81,7 +81,7 @@ const BlogPostWrapper = styled.div`
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  padding: 2% 5%;
+  // padding: 2% 5%;
 
   img {
     border-radius: 6px;
@@ -119,7 +119,7 @@ const BlogPostWrapper = styled.div`
     strong {
       font-weight: 700;
       color: #fff;
-      font-family: Qanelas-Bold;
+      font-family: 'Spartan',sans-serif;
     }
 
     img {
@@ -135,7 +135,7 @@ const BlogPostWrapper = styled.div`
 
     h2 {
       color: rgb(255, 255, 255);
-      font-family: Qanelas-Bold;
+      font-family: 'Spartan',sans-serif;
       font-size: 34px;
       font-weight: bold;
       letter-spacing: 0px;
@@ -143,7 +143,7 @@ const BlogPostWrapper = styled.div`
 
     h3 {
       color: rgb(255, 255, 255);
-      font-family: Qanelas-Bold;
+      font-family: 'Spartan',sans-serif;
       font-size: 26px;
       font-weight: bold;
       letter-spacing: 0px;
@@ -152,7 +152,7 @@ const BlogPostWrapper = styled.div`
     blockquote {
       margin: 50px 0;
       color: rgba(255, 255, 255, 0.8);
-      font-family: Qanelas-Medium;
+      font-family: 'Spartan',sans-serif;
       font-size: 24px;
       font-weight: 500;
       letter-spacing: 0.75px;
@@ -177,7 +177,7 @@ const BlogPostWrapper = styled.div`
   
   h1 {
     color: rgb(255, 255, 255);
-    font-family: Qanelas-Bold;
+    font-family: 'Spartan',sans-serif;
     font-size: 46px;
     font-weight: bold;
     letter-spacing: 0px;

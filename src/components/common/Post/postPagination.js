@@ -60,7 +60,7 @@ const PostPaginationWrapper = styled.div`
 const PreviousPost = styled.div`
     text-transform: uppercase;
     color: rgb(255, 255, 255);
-    font-family: Qanelas-Bold;
+    font-family: 'Spartan',sans-serif;
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 0px;
@@ -71,7 +71,7 @@ const PreviousPost = styled.div`
 const NextPost = styled.div`
     text-transform: uppercase;
     color: rgb(255, 255, 255);
-    font-family: Qanelas-Bold;
+    font-family: 'Spartan',sans-serif;
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 0px;

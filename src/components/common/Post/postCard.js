@@ -68,7 +68,7 @@ const PostCardWrapper = styled.div`
 `
 const PostCardTitle = styled.h1`
         color: rgba(255, 255, 255, 1);
-        font-family: Qanelas-Bold;
+        font-family: 'Spartan',sans-serif;
         font-size: ${({ theme }) => theme.title.fontSize };
         font-weight: bold;
         letter-spacing: 0px;
@@ -95,7 +95,7 @@ const PostCardContent = styled.div`
 
 
 const PostCardExcerpt = styled.p`
-        font-family: Qanelas-Medium;
+        font-family: 'Spartan',sans-serif;
         font-size: 16px;
         font-weight: 500;
         letter-spacing: 0.5px;
@@ -132,7 +132,7 @@ const PostCardMeta = styled.div`
 
     >span:first-child {
         color: rgb(119, 175, 239);
-        font-family: Qanelas-Bold;
+        font-family: 'Spartan',sans-serif;
         font-size: 14px;
         font-weight: bold;
         letter-spacing: 0.44px;
@@ -141,7 +141,7 @@ const PostCardMeta = styled.div`
 
     .divider {
         color: rgb(138, 138, 138);
-        font-family: Qanelas-Bold;
+        font-family: 'Spartan',sans-serif;
         font-size: 14px;
         font-weight: bold;
         letter-spacing: 0.44px;

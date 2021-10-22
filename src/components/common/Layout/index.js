@@ -29,7 +29,7 @@ export default Layout
 
 const LayoutWrapper = styled.div`
     width: 100%;
-    max-width: 1440px;
+    // max-width: 1440px;
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -38,4 +38,6 @@ const LayoutWrapper = styled.div`
 
 const MainElement = styled.main`
   flex: 1;
+  max-width: 1440px;
+  margin: 0 auto;
 `
