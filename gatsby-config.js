@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://www.bankofdefi.com",
@@ -26,12 +30,28 @@ module.exports = {
     "gatsby-plugin-root-import",
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-source-ghost`,
+      options: {
+          apiUrl: `https://news.bankofdefi.com`,
+          contentApiKey: `${process.env.CONTENT_API_KEY}`,
+          version: `v3`
+      }
+   },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
         path: "./src/assets/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: `${__dirname}/src/assets/svg/`,
+        },
+      }
     },
     {
       resolve: "gatsby-source-filesystem",

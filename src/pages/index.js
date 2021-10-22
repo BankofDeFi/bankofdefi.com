@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 import styled from 'styled-components'
 
-import Header from 'src/components/Header'
-import Footer from 'src/components/Footer'
+import Header from 'src/components/common/Header'
+import Footer from 'src/components/common/Footer'
 import BTCBackground from 'src/assets/images/banklogo.png'
 
 import 'src/styles/globals.scss';
