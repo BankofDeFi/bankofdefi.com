@@ -18,7 +18,7 @@ export default function Template(props) {
   const { data, pageContext } = props
   const { nextPostSlug, prevPostSlug } = pageContext
   const { ghostPost } = data // data.markdownRemark holds your post data
-  const { title, html, published_at, feature_image, primary_tag, reading_time } = ghostPost
+  const { title, html, published_at, feature_image, primary_tag: { name }, reading_time } = ghostPost
   const formattedPublishedDate = moment(published_at).local().format('MMM DD YYYY').split(' ')
 
   return (
@@ -27,7 +27,7 @@ export default function Template(props) {
         <PostTitle>{title}</PostTitle>
         <PostMeta>
             <PrimaryMeta>
-                <PrimaryPostTag postTag={"announcements"} />
+                <PrimaryPostTag postTag={name} />
                 <span className="divider">•</span>
                 <PostDate publishedPostDate={formattedPublishedDate} />
             </PrimaryMeta>
@@ -83,15 +83,13 @@ const BlogPostWrapper = styled.div`
   flex-direction: column;
   // padding: 2% 5%;
 
+  a {
+    
+  }
+
   img {
     border-radius: 6px;
   }
-
-  // .blogPost__ImageWrapper-kMyoBq {
-  //   border-radius: 6px;
-  //   border: 1px solid rgba(0,0,0,0.22);
-  //   box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.3);
-  // }
 
   .blog-post-content {
 
@@ -118,7 +116,7 @@ const BlogPostWrapper = styled.div`
 
     strong {
       font-weight: 700;
-      color: #fff;
+      // color: #fff;
       font-family: 'Spartan',sans-serif;
     }
 

@@ -20,6 +20,21 @@ const PostWrapper = styled.section`
     max-width: 800px;
     margin: 0 auto;
 
+    a {
+        color: rgb(165, 92, 27);
+       text-decoration: underline;
+       text-underline-offset: 1px;
+    }
+
+    ul li {
+        margin: 10px 0;
+    }
+
+    ul li a {
+        font-size: 23px;
+        // text-decoration: underline;
+    }
+
     p {
         color: rgba(255, 255, 255, 0.8);
         font-size: 16px;
@@ -32,18 +47,18 @@ const PostWrapper = styled.section`
             font-weight: 600;
         }
 
-        &:last-child {
-            a {
-                color: rgb(250,70,22);
-                opacity: 0.7;
+        // &:last-child {
+        //     a {
+        //         color: rgb(250,70,22);
+        //         opacity: 0.7;
 
-                :hover {
-                    opacity: 1;
-                }
+        //         :hover {
+        //             opacity: 1;
+        //         }
 
-                text-decoration: none;
-            }
-        }
+        //         text-decoration: none;
+        //     }
+        // }
     }
 
     h2 {
