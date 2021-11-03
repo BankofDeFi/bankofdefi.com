@@ -18,7 +18,7 @@ const Header =  ({ appURL, blogURL }) => {
 
               <HeaderNav>
                   <div><a href="https://blog.bankofdefi.com">Blog</a></div>
-                  <div><Link to={`/news`}>News</Link></div>
+                  {/* <div><Link to={`/news`}>News</Link></div> */}
                   <ButtonWrapper><a href={appURL}>Open Bank</a></ButtonWrapper>
               </HeaderNav>
           </HeaderElement>)
