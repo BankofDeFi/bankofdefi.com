@@ -8,12 +8,12 @@ import Logo from 'src/assets/images/banklogo.png'
 
 const Header =  ({ appURL, blogURL }) => {  
   return (<HeaderElement>
-            <Link to={`/`}>
               <LogoWrapper>
-                <ImageWrapper><img src={Logo} alt="logo" /></ImageWrapper>
-                <div className="title">Bank of DeFi</div>
+                <Link to={`/`}>
+                  {/* <ImageWrapper><img src={Logo} alt="logo" /></ImageWrapper> */}
+                  <div className="title">Bank of DeFi</div>
+                </Link>
               </LogoWrapper>
-            </Link>
               
 
               <HeaderNav>
@@ -51,29 +51,21 @@ const LogoWrapper = styled.div`
   display: flex;
   position: relative;
   align-items: center;
-  margin-top: 30px;
+  // margin-top: 30px;
+  margin-left: 30px;
   width: 100%;
   cursor: pointer;
+  width: 100%;
 
   .title {
-    margin: 20px 0px 0px -20px;
+    // margin: 20px 0px 0px -20px;
     font-size: 30px;
     line-height: 1.15;
     font-family: 'Rokkitt', serif;
     font-weight: 600;
-    width: 100%;
-
-    .description {
-      text-align: center;
-    }
-    a {
-      color: #0070f3;
-      text-decoration: none;
-      &:hover, &:focus, &:active {
-        text-decoration: underline;
-      }
-    }
+    // width: 100%;
   }
+
   img {
     width: 100%;
     max-width: 75px;
