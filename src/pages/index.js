@@ -99,15 +99,22 @@ const HeroWrapper = styled.div`
     background-image:  url(${TigerEyes});
     transform: scaleX(-1);
     background-repeat: no-repeat;
-    opacity: 0.04;
+    opacity: 0.08;
 
-    background-size: 1200px;
+
+    background-size: 80%;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-position: 0% 50%;
+    background-position: -50% 50%;
+
+    @media(max-width: 900px) {
+      background-position: 50% 0%;
+      background-size: 1000px;
+    }
+
   }
 
 
