@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Header from 'src/components/common/Header'
 import Footer from 'src/components/common/Footer'
-import BTCBackground from 'src/assets/images/banklogo.png'
+import TigerEyes from 'src/assets/images/tiger-eyes.jpg'
 
 import 'src/styles/globals.scss';
 import 'src/styles/fonts.scss';
@@ -94,20 +94,23 @@ const HeroWrapper = styled.div`
     padding: 0 25px;
   }
 
-  // ::before {
-  //   content: "";
-  //   background-image:  url(${BTCBackground});
-  //   transform: scaleX(-1);
-  //   background-repeat: no-repeat;
-  //   opacity: 0.7;
-  //   // background-size: 600px;
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   background-position: 10% 50%;
-  // }
+  ::before {
+    content: "";
+    background-image:  url(${TigerEyes});
+    transform: scaleX(-1);
+    background-repeat: no-repeat;
+    opacity: 0.04;
+
+    background-size: 1200px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: 0% 50%;
+  }
+
+
 `
 
 
