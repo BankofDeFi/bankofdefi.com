@@ -43,5 +43,6 @@ const FooterElement = styled.footer`
     align-items: center;
     font-family: Rokkitt, sans-serif;
     font-size: 16px;
+    font-weight: 600;
   }
 `

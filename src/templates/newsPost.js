@@ -177,8 +177,9 @@ const BlogPostWrapper = styled.div`
     color: rgb(255, 255, 255);
     font-family: 'Spartan',sans-serif;
     font-size: 46px;
-    font-weight: bold;
+    font-weight: 600;
     letter-spacing: 0px;
+    line-height: 1.55;
     border-bottom: 1px solid rgb(64, 70, 72);
     padding-bottom: 20px;
 

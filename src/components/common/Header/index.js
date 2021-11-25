@@ -101,9 +101,9 @@ const HeaderNav = styled.nav`
   }
 
   // Temp removal of header nav on mobile, should add hamburger menu to replace. 
-  @media(max-width: 500px) {
-    display: none; 
-  }
+  // @media(max-width: 500px) {
+  //   display: none; 
+  // }
 `
 
 
