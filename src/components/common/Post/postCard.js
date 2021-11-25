@@ -16,7 +16,7 @@ const PostCard = props => {
     
     return (
             <PostCardContainer>
-                <Link to={`/news/${slug}`}>
+                <Link to={`/blog/${slug}`}>
                     <PostCardWrapper>
                         <FeaturedImageWrapper><img src={feature_image} /></FeaturedImageWrapper>
                         <PostCardContent>
