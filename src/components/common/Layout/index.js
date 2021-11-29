@@ -13,7 +13,7 @@ const Layout = ({ children, useDefaultHeader = true }) => {
 
   return (<Grid container spaces={3}>
             <LayoutWrapper>
-              <Helmet></Helmet>
+              <Helmet title="Bank of DeFi | Smart & Dangerous Portfolio Management" />
               {useDefaultHeader && <Header />}
 
               <MainElement>{children}</MainElement>

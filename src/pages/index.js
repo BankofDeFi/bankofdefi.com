@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <PageWrapper>
       <Helmet>
-        <title>Bank of DeFi</title>
+        <title>Bank of DeFi | Smart & Dangerous Portfolio Management</title>
         <link rel="icon" href="/favicon.ico" />
       </Helmet>
       <Header
